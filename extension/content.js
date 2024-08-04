@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
 		
 		const iframeOuterElements = {};
 		var iframeElements = iframeDocument.querySelectorAll("*[id]");
-		debugger;
+		
 		iframeElements.forEach(iframeElement => {
 			iframeOuterElements[iframeElement.id] = iframeElement.outerHTML;
 		});
