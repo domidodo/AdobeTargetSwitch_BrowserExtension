@@ -52,13 +52,21 @@ chrome.runtime.onMessage.addListener(function(request, sender, response) {
 	}else if (request.action === "getTagetCount") {
 		response(Object.keys(window.adobetargetswitch).length);
 	}else if (request.action === "disableAdobeTarget") {
-		
 		Object.keys(window.adobetargetswitch).forEach(function (key) {
 			const target = document.getElementById(key);
 			if(request.value){
 				target.outerHTML = window.adobetargetswitch[target.id].off;
 			}else{
 				target.outerHTML = window.adobetargetswitch[target.id].on;
+			}
+		});
+	}else if (request.action === "hailightTargets") {
+		Object.keys(window.adobetargetswitch).forEach(function (key) {
+			const target = document.getElementById(key);
+			if(request.value){
+				target.style.border = '5px solid red';
+			}else{
+				target.style.border = 'none';
 			}
 		});
 	}
