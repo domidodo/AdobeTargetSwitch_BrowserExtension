@@ -1,9 +1,11 @@
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     if (details.url.includes("at.js")) {
-	  if (details.frameId !== 0) {
-		return { cancel: true };  
-	  }
+		if (details.frameId === 0) {
+			chrome.tabs.sendMessage(details.tabId, { action: "hasAdobeTarget", active: true }, function(response) {});
+		}else{
+			return { cancel: true };  
+		}
     }
   },
   { 
