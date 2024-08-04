@@ -20,5 +20,14 @@
 	  "run_at": "document_start"
     }
   ],
+  "icons": {
+    "128": "AdobeTargetSwitch.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+		"128": "AdobeTargetSwitchOn.png"
+    }
+  },
   "host_permissions": ["<all_urls>"]
 }

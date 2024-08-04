@@ -1,14 +1,22 @@
+window.adobetargetswitch = {};
+
 function compareAndMarkDifferences(iframeOuterElements) {
 	for (const id in iframeOuterElements) {
-		const outerHTML = iframeOuterElements[id];
-		const originalElement = document.getElementById(id);
-	
-		if (originalElement) {
-			const originalouterHTML = originalElement.outerHTML;
-			if (originalouterHTML !== outerHTML) {
-				originalElement.classList.add("adobe-target-switch");
-				originalElement.adobeTargetSwitchOff = outerHTML;
-				originalElement.adobeTargetSwitchOn = originalouterHTML;
+		
+		if(id.length > 0){		
+			const outerHTML = iframeOuterElements[id];
+			const originalElement = document.getElementById(id);
+		
+			if (originalElement && originalElement.tagName !== 'BODY') {
+				const originalouterHTML = originalElement.outerHTML;
+				if (originalouterHTML !== outerHTML) {
+					originalElement.classList.add("adobe-target-switch");
+					
+					window.adobetargetswitch[id] = {
+						off: outerHTML,
+						on: originalouterHTML
+					};
+				}
 			}
 		}
 	}
@@ -36,10 +44,22 @@ function start(){
 	document.body.appendChild(iframe);
 }
 
-chrome.runtime.onMessage.addListener(function(request, sender) {
+chrome.runtime.onMessage.addListener(function(request, sender, response) {
 	if (request.action === "hasAdobeTarget" && request.active) {
 		window.addEventListener('load', function () {
 			start();
+		});
+	}else if (request.action === "getTagetCount") {
+		response(Object.keys(window.adobetargetswitch).length);
+	}else if (request.action === "disableAdobeTarget") {
+		
+		Object.keys(window.adobetargetswitch).forEach(function (key) {
+			const target = document.getElementById(key);
+			if(request.value){
+				target.outerHTML = window.adobetargetswitch[target.id].off;
+			}else{
+				target.outerHTML = window.adobetargetswitch[target.id].on;
+			}
 		});
 	}
 });
