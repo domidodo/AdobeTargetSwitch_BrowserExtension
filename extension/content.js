@@ -7,9 +7,9 @@ window.addEventListener('load', function () {
 			if (originalElement) {
 				const originalouterHTML = originalElement.outerHTML;
 				if (originalouterHTML !== outerHTML) {
-					element.classList.add("adobe-target-switch");
-					element.adobeTargetSwitchOff = outerHTML;
-					element.adobeTargetSwitchOn = originalouterHTML;
+					originalElement.classList.add("adobe-target-switch");
+					originalElement.adobeTargetSwitchOff = outerHTML;
+					originalElement.adobeTargetSwitchOn = originalouterHTML;
 				}
 			}
 		}
