@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AdobeTargetSwitch",
-  "version": "1.0",
+  "version": "1.0.1",
   "author": "Dominik Hitschmann",
   "description": "An extension for developers. Disable or highlight adobe targets on a page.",
   "browser_specific_settings": {
@@ -13,8 +13,7 @@
 	"scripting",
     "activeTab",
     "storage",
-	"declarativeNetRequest",
-    "declarativeNetRequestFeedback"
+	  "declarativeNetRequest"
   ],
   "declarative_net_request" : {
     "rule_resources" : [{
@@ -50,6 +49,5 @@
     "default_icon": {
 		"128": "img/AdobeTargetSwitch.png"
     }
-  },
-  "host_permissions": ["<all_urls>"]
+  }
 }
