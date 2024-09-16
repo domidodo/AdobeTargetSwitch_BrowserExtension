@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Target Switch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="popup-container">
+        <div class="logo-container">
+            <img src="/img/PopupLogo.png" alt="" class="logo">
+        </div>
+		<div id="state-targets-searching" style="display:block;">
+			Searching...<br/>
+			<br/>
+			<small>
+				(Open again later)
+			</small>
+		</div>
+		<div id="state-targets-notexists" style="display:none;">
+			This page has no Adobe Targets
+		</div>
+		<div id="state-targets-exists" style="display:none;">
+			<div class="checkbox-container">
+				<input type="checkbox" id="checkBlock">
+				<label for="checkBlock">Block Adobe Targets on load</label>
+			</div>
+			<br/>
+			<div id="state-targets-unblocked" style="display:block;">
+				<hr/>
+				<br/>
+				<div class="elements-meta">
+					Version: <span id="elements-version">?</span><br/>
+					Count: <span id="elements-count">?</span>
+				</div>
+				<div class="checkbox-container">
+					<input type="checkbox" id="checkDisable" disabled>
+					<label for="checkDisable">Disable Adobe Targets</label>
+				</div>
+				<div class="checkbox-container">
+					<input type="checkbox" id="checkHailight" disabled>
+					<label for="checkHailight">Hailight Adobe Targets</label>
+				</div>
+				<div class="table-container">
+					<table>
+						<tbody id="targets-table-body">
+							<tr>
+								<td>
+									Loading...
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="popup.js"></script>
+</body>
+</html>
