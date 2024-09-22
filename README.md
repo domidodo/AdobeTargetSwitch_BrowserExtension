@@ -57,8 +57,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Adobe Target is a tool that enables post-launch modifications to a website, making it useful for tasks like A/B testing. <a href="https://business.adobe.com/products/target/adobe-target" target="_blank">More »</a>
 
-Coming soon
+However, it complicates things for developers by making it difficult to determine the current state of the site, as it's hard to differentiate whether certain parts were originally coded that way or altered by Adobe Target.
+
+This extension aims to address that issue. Developers can easily disable Adobe Target with the extension to view only the original state of their code. It also allows for highlighting of targets and anchors, and displays a diff on mouseover for easier comparison.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
