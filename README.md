@@ -73,8 +73,7 @@ Coming soon
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Screenshots
-
-Coming soon
+<img src="screenshot/screenshot_1.png" alt="Logo" width="640" height="400">
 
 <!-- GETTING STARTED -->
 
