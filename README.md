@@ -81,8 +81,11 @@ Coming soon
 ## Installation
 
 FireFox: <br/>
-https://addons.mozilla.org/de/firefox/addon/adobe-target-switch/
-
+https://addons.mozilla.org/de/firefox/addon/adobe-target-switch/ <br/>
+<br/>
+Chrome: <br/>
+https://chromewebstore.google.com/detail/adobetargetswitch/nggcocnimmgmonjbkpannakcpdkppbob <br/>
+<br/>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
